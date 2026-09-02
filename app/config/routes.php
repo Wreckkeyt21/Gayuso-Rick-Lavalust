@@ -50,5 +50,11 @@ $router->get('/student/profile', 'StudentController::profile')
 
 $router->get('/student/login', 'StudentController::login');
 $router->get('/student/logout', 'StudentController::logout');
+
+
+
+
+$router->get('/users', 'UsersController::index');
+
 /** @var object $router **/
 
