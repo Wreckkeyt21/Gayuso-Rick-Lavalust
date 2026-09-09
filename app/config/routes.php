@@ -58,3 +58,15 @@ $router->get('/users', 'UsersController::index');
 
 /** @var object $router **/
 
+// Auth routes
+$router->get('/login', 'AuthController::index');
+$router->post('/login/authenticate', 'AuthController::login');
+$router->get('/logout', 'AuthController::logout');
+
+// Product CRUD routes (protected)
+$router->get('/products', 'ProductController::index')->middleware('auth');
+$router->get('/products/create', 'ProductController::create')->middleware('auth');
+$router->post('/products/store', 'ProductController::store')->middleware('auth');
+$router->get('/products/edit/{id}', 'ProductController::edit')->middleware('auth');
+$router->post('/products/update/{id}', 'ProductController::update')->middleware('auth');
+$router->get('/products/delete/{id}', 'ProductController::delete')->middleware('auth');

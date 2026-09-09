@@ -347,5 +347,6 @@ $config['csrf_expire']             = 7200;
 $config['csrf_regenerate']         = FALSE;
 $config['middlewares'] = array(
     'student_access' => load_class('StudentMiddleware', 'middlewares'),
+    'auth' => load_class('AuthMiddleware', 'middlewares'),
 );
 ?>
